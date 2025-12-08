@@ -1526,6 +1526,16 @@ nav li a:active {
 }
 
 /* Form */
+
+.contact-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-size: 16px;
+  color: #064e3b;
+  font-weight: 600;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -1557,6 +1567,12 @@ nav li a:active {
 .contact-form button:hover {
   background: linear-gradient(135deg, #047857, #16a34a);
   transform: scale(1.05);
+}
+
+#formStatus {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
 }
 
 /* Mobile */
