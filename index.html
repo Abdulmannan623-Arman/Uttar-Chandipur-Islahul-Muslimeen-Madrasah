@@ -10,10 +10,10 @@
   <meta name="keywords"
     content="Madrasah, Islahul Muslimeen Madrasah, Islamic Education, Quran Learning, Uttar Chandipur Madrasah, Uttar Chandipur Madrasah, Bhutni Madrasah, Malda Madrasah, West Bengal Madrasah, Islamic School, Religious Education, Islamic Studies, Quran Classes, Hadith Studies, Islamic Morals, Muslim Education, Islamic Institution, Madrasah Admission">
 
-  <meta property="og:title" content="Islahul Muslimeen Madrasah - Islamic Education in Malda">
+  <!-- <meta property="og:title" content="Islahul Muslimeen Madrasah - Islamic Education in Malda">
   <meta property="og:description" content="Quran, Hadith and Moral Education in Uttar Chandipur, Malda">
   <meta property="og:image" content="images/logo.jpg">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="website"> -->
 
   <title>Uttar Chandipur Islahul Muslimeen Madrasah | Best Islamic Madrasah in Malda</title>
 
@@ -30,53 +30,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-
 
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "Islahul Muslimeen Madrasah",
-  "alternateName": "Uttar Chandipur Islahul Muslimeen Madrasah",
-  "url": "https://yourwebsite.github.io",
-  "logo": "https://yourwebsite.github.io/images/logo.jpg",
-  "image": [
-    "https://yourwebsite.github.io/images/Madrasa.png",
-    "https://yourwebsite.github.io/images/Kids.png"
-  ],
-  "description": "Islahul Muslimeen Madrasah is a trusted Islamic educational institute in Uttar Chandipur, Bhutni, Malda, West Bengal teaching Quran, Hadith and moral education.",
-  "telephone": "+91 6307712966",
-  "email": "ucpurislahulmuslimeenmadrasah@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Uttar Chandipur",
-    "addressLocality": "Bhutni",
-    "addressRegion": "West Bengal",
-    "postalCode": "732203",
-    "addressCountry": "India"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "24.4300",
-    "longitude": "88.1000"
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"
-    ],
-    "opens": "08:00",
-    "closes": "16:00"
-  },
-  "sameAs": [
-    "https://www.facebook.com/",
-    "https://www.youtube.com/"
-  ]
-}
-</script> -->
 
 
 </head>
@@ -289,7 +244,8 @@
       <div class="principal-content">
         <h2 class="principal-heading">মুহতামিম সাহেবের বাণী</h2>
 
-        <p class="principal-paragraph">আলহামদুলিল্লাহ, আল্লাহ তায়ালার অশেষ দয়া ও রহমতে আমাদের এই মাদ্রাসা দীর্ঘদিন ধরে
+        <p class="principal-paragraph">
+          আলহামদুলিল্লাহ, আল্লাহ তায়ালার অশেষ দয়া ও রহমতে আমাদের এই মাদ্রাসা দীর্ঘদিন ধরে
           দ্বীনি শিক্ষা বিস্তারের ক্ষেত্রে একটি নির্ভরযোগ্য ও আদর্শ প্রতিষ্ঠান হিসেবে পরিচালিত হয়ে আসছে।
           আমাদের মূল লক্ষ্য—শিক্ষার্থীদের শুধুমাত্র পাঠ্য শিক্ষায় সীমাবদ্ধ না রেখে তাদের অন্তরকে ঈমান দিয়ে গড়া এবং
           চরিত্রকে কুরআন ও সুন্নাহর আলোতে বিকশিত করা। এখানে শিক্ষার্থীদের সহিহ তাজবিদসহ কুরআন শিক্ষা প্রদান করা হয়,
@@ -490,13 +446,22 @@
 
         <h3>Send Message</h3>
 
-        <input type="text" placeholder="Enter your name" required>
-        <input type="email" placeholder="Enter your email" required>
-        <textarea placeholder="Write your message"></textarea>
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="Enter your name" required autocomplete="name">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Enter your email" required autocomplete="email">
+          <label for="msg">Message:</label>
+          <textarea id="msg" placeholder="Write your message" required></textarea>
 
-        <button type="submit">Send</button>
+          <button type="submit">Send Message</button>
+
+          <p id="formStatus"></p>
+
+        </form>
 
       </div>
+
 
     </div>
   </section>
@@ -807,6 +772,43 @@
       });
     });
 
+  </script>
+
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("formStatus");
+
+    // তোমার WhatsApp Number (Country code সহ)
+    const whatsappNumber = "917602022631";
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let msg = document.getElementById("msg").value.trim();
+
+      if (name === "" || email === "" || msg === "") {
+        status.textContent = "Please fill all fields.";
+        status.style.color = "red";
+        return;
+      }
+
+      let whatsappMessage =
+        `Name: ${name}%0A` +
+        `Email: ${email}%0A` +
+        `Message: ${msg}`;
+
+      let whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+      status.textContent = "Redirecting to WhatsApp...";
+      status.style.color = "green";
+
+      window.open(whatsappURL, "_blank");
+
+      form.reset();
+    });
   </script>
 
 </body>
