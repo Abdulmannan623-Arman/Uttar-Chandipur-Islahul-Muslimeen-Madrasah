@@ -268,7 +268,7 @@ nav li a:active {
   }
 
   .hero-slider {
-    height: 50vh;
+    height: 40vh;
   }
 
   .hero-content {
@@ -401,7 +401,7 @@ nav li a:active {
 
 /* ===== ABOUT CARD SECTION ===== */
 .about-section {
-  padding: 70px 20px;
+  padding: 60px 10px;
   background: #f3f7f4;
   display: flex;
   justify-content: center;
@@ -544,7 +544,7 @@ nav li a:active {
   }
 
   .about-text p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
 }
@@ -553,7 +553,7 @@ nav li a:active {
 .reveal {
   opacity: 0;
   transform: scale(0.9);
-  transition: all 2s ease;
+  transition: all 1.8s ease;
 }
 
 .reveal.active {
@@ -572,6 +572,7 @@ nav li a:active {
   opacity: 1;
   transform: translateX(0);
 }
+
 
 /* ===== PURPOSE CARDS GRID ===== */
 .purpose-cards {
@@ -692,8 +693,8 @@ nav li a:active {
 
 /* ===== PRINCIPAL SECTION ===== */
 .principal-section {
-  padding: 60px 10px;
-  background: linear-gradient(180deg, #9d9d9d 0%, #ededed 100%);
+  padding: 30px 10px;
+  background: linear-gradient(180deg, #f3f3f3 0%, #ededed 100%);
 }
 
 .principal-card {
@@ -825,7 +826,7 @@ nav li a:active {
   }
 
   .principal-paragraph {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
   }
 
@@ -1462,143 +1463,140 @@ nav li a:active {
 }
 
 
-
-/* ===== CONTACT SECTION ===== */
-.contact-section {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+/* ===== ADMISSION CTA ===== */
+.admission-cta {
+  padding: 80px 15px;
+  background: linear-gradient(
+  135deg,
+  rgba(6, 78, 59, 0.95),
+  rgba(15, 118, 110, 0.95)
+  ),
+  url("../images/Madrasa.png") center/cover no-repeat;
+  position: relative;
   text-align: center;
+  color: white;
 }
 
-.contact-title {
-  font-size: 32px;
-  color: #065f2a;
-  margin-bottom: 40px;
+/* CONTENT */
+.cta-content {
+  max-width: 800px;
+  margin: auto;
 }
 
-/* Layout */
-.contact-container {
+.cta-content h2 {
+  font-size: 34px;
+  margin-bottom: 16px;
+  font-family: "Noto Serif Bengali", serif;
+}
+
+.cta-content p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  opacity: 0.95;
+  font-family: "Noto Serif Bengali", serif;
+}
+
+/* BUTTONS */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+/* PRIMARY */
+.cta-btn.primary {
+  background: #22c55e;
+  color: #064e3b;
+}
+
+.cta-btn.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6);
+}
+
+/* SECONDARY */
+.cta-btn.secondary {
+  border: 2px solid white;
+  color: white;
+}
+
+.cta-btn.secondary:hover {
+  background: white;
+  color: #064e3b;
+  transform: translateY(-4px);
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .cta-content h2 {
+    font-size: 22px;
+  }
+
+  .cta-content p {
+    font-size: 14px;
+  }
+
+  .cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* ===== CONTACT STRIP ===== */
+.contact-strip {
+  background: linear-gradient(135deg, #065f2a, #0f766e);
+  padding: 30px 15px;
+  color: white;
+}
+
+.contact-strip-container {
   max-width: 1100px;
   margin: auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-/* Cards */
-.contact-info,
-.contact-form {
-  background: white;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  transition: 0.4s ease;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 220px;
 }
 
-/* Hover */
-.contact-info:hover,
-.contact-form:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.15);
+.contact-item i {
+  font-size: 28px;
+  color: #bbf7d0;
 }
 
-/* Headings */
-.contact-info h3,
-.contact-form h3 {
-  color: #047857;
-  margin-bottom: 15px;
-  font-size: 22px;
-}
-
-.contact-info h3 {
-  margin-top: 60px;
-}
-
-/* Text */
-.contact-info p {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.contact-info p b {
-  color: #065f2a;
-}
-
-/* Form */
-
-.contact-form label {
+.contact-item span {
   display: block;
-  text-align: left;
-  margin-bottom: 6px;
-  font-size: 16px;
-  color: #064e3b;
-  font-weight: 600;
+  font-size: 13px;
+  opacity: 0.85;
 }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-.contact-form textarea {
-  height: 120px;
-}
-
-/* Button */
-.contact-form button {
-  width: 100%;
-  background: linear-gradient(135deg, #16a34a, #047857);
+.contact-item a,
+.contact-item p {
   color: white;
-  border: none;
-  padding: 12px;
   font-size: 15px;
-  cursor: pointer;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.contact-form button:hover {
-  background: linear-gradient(135deg, #047857, #16a34a);
-  transform: scale(1.05);
-}
-
-#formStatus {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 14px;
-}
-
-/* Mobile */
-@media(max-width:768px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-info h3 {
-    margin-top: 0;
-    font-size: 20px;
-  }
-
-  .contact-form h3 {
-    font-size: 20px;
-  }
-
-  .contact-info p {
-    font-size: 13px;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 12px;
-  }
-
+  font-weight: bold;
+  text-decoration: none;
+  word-break: break-all;
+  overflow-wrap: break-word;
 }
 
 
