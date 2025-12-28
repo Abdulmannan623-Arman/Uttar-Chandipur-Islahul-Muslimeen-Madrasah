@@ -1599,6 +1599,11 @@ nav li a:active {
   overflow-wrap: break-word;
 }
 
+@media (max-width: 768px) {
+  .contact-item .email {
+    font-size: 13px;
+  }
+}
 
 /* MAP BOX */
 .map-box {
