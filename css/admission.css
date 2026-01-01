@@ -75,7 +75,7 @@ header .title p {
 
 /* =============== NAV =============== */
 nav {
-  background: #0080ff;
+  background: #015eba;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   padding: 12px;
   text-align: center;
@@ -292,7 +292,7 @@ nav a.active {
 /* PRIMARY */
 .cta-btn.primary {
   background: #22c55e;
-  color: #064e3b;
+  color: #01261b;
 }
 
 .cta-btn.primary:hover {
@@ -351,7 +351,7 @@ nav a.active {
   font-size: 28px;
   color: #065f2a;
   margin-bottom: 8px;
-  font-family: "Noto Serif Bengali", serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .form-subtitle {
@@ -359,6 +359,7 @@ nav a.active {
   font-size: 15px;
   color: #555;
   margin-bottom: 30px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* ===== FORM ===== */
@@ -370,19 +371,18 @@ nav a.active {
 
 /* ===== FIELDSET ===== */
 .admission-form fieldset {
-  border: 2px solid #d1fae5;
+  border: 2px solid #007337;
   padding: 20px;
   border-radius: 14px;
   background: #f9fffb;
 }
 
 .admission-form legend {
-  padding: 6px 14px;
+  padding: 6px;
   font-weight: bold;
   color: #065f2a;
-  background: #ecfdf5;
   border-radius: 50px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* ===== FORM GROUP ===== */
@@ -400,7 +400,7 @@ nav a.active {
 /* Label */
 .form-group label {
   font-size: 14px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: #064e3b;
   font-weight: 600;
 }
@@ -461,26 +461,6 @@ nav a.active {
 
   .form-row {
     flex-direction: column;
-  }
-}
-
-/* MAP BOX */
-.map-box {
-  width: 100%;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.map-box iframe {
-  width: 100%;
-  height: 450px;
-  border: none;
-}
-
-/* Mobile */
-@media(max-width:768px) {
-  .map-box iframe {
-    height: 320px;
   }
 }
 
