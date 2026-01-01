@@ -3,11 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif
 }
 
 body {
   background: #f5f5f5;
+  font-family: Arial, Helvetica, sans-serif
 }
 
 html,
@@ -33,6 +33,10 @@ header {
   padding: 12px 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+}
+
+img {
+  content-visibility: auto;
 }
 
 
@@ -75,7 +79,7 @@ header .title p {
 
 /* =============== NAV =============== */
 nav {
-  background: #0080ff;
+  background: #015eba;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   padding: 12px;
   text-align: center;
@@ -93,7 +97,7 @@ nav ul {
 }
 
 nav li a {
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   margin: 0 15px;
   font-size: 18px;
@@ -111,7 +115,7 @@ nav li a:active {
 /* =============== HERO SLIDER =============== */
 .hero-slider {
   position: relative;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background: black;
 }
@@ -138,7 +142,7 @@ nav li a:active {
 }
 
 /* Zoom Animation */
-.slide.active {
+/* .slide.active {
   animation: zoomEffect 12s linear infinite;
 }
 
@@ -150,7 +154,7 @@ nav li a:active {
   100% {
     transform: scale(1.15);
   }
-}
+} */
 
 /* Overlay */
 .slide::before {
@@ -411,7 +415,7 @@ nav li a:active {
   max-width: 1100px;
   background: white;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
   display: flex;
   gap: 40px;
   padding: 40px;
@@ -447,7 +451,7 @@ nav li a:active {
 
 
 /* BUTTON */
-.about-btn {
+.more-btn {
   display: inline-block;
   background: linear-gradient(135deg, #047857, #16a34a);
   color: white;
@@ -462,7 +466,7 @@ nav li a:active {
 }
 
 /* GLOW EFFECT */
-.about-btn::before {
+.more-btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -473,13 +477,13 @@ nav li a:active {
   transition: 0.5s;
 }
 
-.about-btn:hover::before {
+.more-btn:hover::before {
   left: 100%;
 }
 
-.about-btn:hover {
+.more-btn:hover {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
 }
 
 /* IMAGE */
@@ -492,14 +496,13 @@ nav li a:active {
 .about-image img {
   width: 100%;
   border-radius: 15px;
-  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
   animation: floatImg 4s ease-in-out infinite;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .about-image img:hover {
   transform: scale(1.07) rotate(1deg);
-  box-shadow: 0 35px 50px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes floatImg {
@@ -554,7 +557,9 @@ nav li a:active {
   opacity: 0;
   transform: scale(0.9);
   transition: all 1.8s ease;
+  will-change: opacity, transform;
 }
+
 
 .reveal.active {
   opacity: 1;
@@ -573,11 +578,43 @@ nav li a:active {
   transform: translateX(0);
 }
 
+/* ===== PURPOSE WRAPPER CARD ===== */
+.purpose-wrapper {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+  margin-top: 40px;
+}
+
+/* TITLE */
+.purpose-title {
+  text-align: center;
+  font-size: 22px;
+  color: #065f2a;
+  margin-bottom: 25px;
+  font-family: "Noto Serif Bengali", sans-serif;
+  position: relative;
+}
+
+/* OPTIONAL UNDERLINE DECORATION */
+.purpose-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #16a34a, #047857);
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 50px;
+}
+
 
 /* ===== PURPOSE CARDS GRID ===== */
 .purpose-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 30px;
 }
@@ -604,7 +641,7 @@ nav li a:active {
 
 /* TITLE */
 .purpose-card h4 {
-  font-size: 16px;
+  font-size: 18px;
   color: #065f2a;
   margin-bottom: 6px;
   font-family: "Noto Sans Bengali", sans-serif;
@@ -613,7 +650,7 @@ nav li a:active {
 
 /* TEXT */
 .purpose-card p {
-  font-size: 15px;
+  font-size: 16px;
   color: #000000;
   line-height: 1.5;
   font-family: "Noto Serif Bengali", sans-serif;
@@ -630,7 +667,7 @@ nav li a:active {
   color: #16a34a;
 }
 
-/* GLOW LINE */
+GLOW LINE
 .purpose-card::before {
   content: '';
   position: absolute;
@@ -658,38 +695,6 @@ nav li a:active {
   }
 }
 
-/* ===== PURPOSE WRAPPER CARD ===== */
-.purpose-wrapper {
-  max-width: 1100px;
-  margin: 40px auto;
-  background: white;
-  padding: 30px 25px;
-  border-radius: 16px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  margin-top: 40px;
-}
-
-/* TITLE */
-.purpose-title {
-  text-align: center;
-  font-size: 22px;
-  color: #065f2a;
-  margin-bottom: 25px;
-  font-family: "Noto Serif Bengali", sans-serif;
-  position: relative;
-}
-
-/* OPTIONAL UNDERLINE DECORATION */
-.purpose-title::after {
-  content: "";
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(135deg, #16a34a, #047857);
-  display: block;
-  margin: 8px auto 0;
-  border-radius: 50px;
-}
-
 
 /* ===== PRINCIPAL SECTION ===== */
 .principal-section {
@@ -704,7 +709,7 @@ nav li a:active {
   gap: 28px;
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(3, 41, 24, 0.07);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
   padding: 26px;
   align-items: center;
   overflow: hidden;
@@ -777,15 +782,6 @@ nav li a:active {
 /* Card hover lift */
 .principal-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 28px 65px rgba(3, 41, 24, 0.12);
-}
-
-/* Reveal tweaks (works with your existing reveal script) */
-.reveal {
-  /* opacity: 0; */
-  /* transform: translateY(18px) scale(.995); */
-  /* transition: all 2s cubic-bezier(.2, .9, .2, 1); */
-  will-change: opacity, transform;
 }
 
 
@@ -846,7 +842,7 @@ nav li a:active {
 
 /* Title */
 .course-title {
-  font-size: 34px;
+  font-size: 30px;
   color: #064e3b;
   margin-bottom: 50px;
   font-family: "Noto Serif Bengali", serif;
@@ -877,7 +873,7 @@ nav li a:active {
   padding: 32px 24px;
   border-radius: 16px;
   position: relative;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, .1);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
   transition: 0.5s;
   overflow: hidden;
   backdrop-filter: blur(4px);
@@ -902,7 +898,7 @@ nav li a:active {
 /* Hover Animation */
 .course-card:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0, 128, 0, .2);
+  box-shadow: 0 15px 25px rgba(0, 128, 0, .2);
 }
 
 .course-card:hover::before {
@@ -943,13 +939,14 @@ nav li a:active {
   }
 }
 
-@media (max-width:600px) {
+@media (max-width:768px) {
   .course-cards {
     grid-template-columns: 1fr;
+    max-width: 350px;
   }
 
   .course-title {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .course-card p {
@@ -982,7 +979,6 @@ nav li a:active {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* desktop: 3 per row */
   gap: 26px;
   align-items: stretch;
 }
@@ -992,7 +988,7 @@ nav li a:active {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
   transition: transform .35s ease, box-shadow .35s ease;
 }
 
@@ -1001,10 +997,7 @@ nav li a:active {
   display: block;
   width: 100%;
   height: 220px;
-  /* fixed visual height */
   object-fit: cover;
-  /* keep aspect cover */
-  /* vertical-align: middle; */
 }
 
 /* Loading animation default */
@@ -1023,7 +1016,7 @@ nav li a:active {
 /* hover */
 .gallery-item:hover {
   transform: translateY(-6px);
-  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12);
 }
 
 /* Gallery Caption */
@@ -1042,6 +1035,17 @@ nav li a:active {
 .gallery-item:hover .gallery-caption {
   background: linear-gradient(135deg, #16a34a, #047857);
   color: white;
+}
+
+.gallery-btn-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.gallery-btn-wrapper .gallery-btn {
+  width: 180px;
+  font-size: 1rem;
+  padding: 12px 28px;
 }
 
 /* RESPONSIVE adjustments */
@@ -1085,7 +1089,7 @@ nav li a:active {
   max-width: 90%;
   max-height: 80vh;
   border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.7);
   animation: zoomIn 0.5s ease;
 }
 
@@ -1283,7 +1287,7 @@ nav li a:active {
   background: #fff;
   border-radius: 14px;
   padding: 28px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
   transition: 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -1292,7 +1296,7 @@ nav li a:active {
 /* Hover Effect */
 .facility-card:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 20px 45px rgba(6, 95, 42, 0.2);
+  box-shadow: 0 15px 25px rgba(6, 95, 42, 0.2);
 }
 
 /* GLOW BORDER */
@@ -1349,7 +1353,7 @@ nav li a:active {
 
 /* ===== TEACHERS SECTION ===== */
 .teachers-section {
-  padding: 70px auto;
+  padding: 70px 15px;
   background: linear-gradient(180deg, #f3f7f4, #ffffff);
   text-align: center;
 }
@@ -1397,7 +1401,7 @@ nav li a:active {
   height: 440px;
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Text */
@@ -1453,6 +1457,17 @@ nav li a:active {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.teacher-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.all-teachers-btn {
+  width: 80%;
 }
 
 /* Mobile */
@@ -1522,7 +1537,7 @@ nav li a:active {
 
 .cta-btn.primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.6);
+  box-shadow: 0 12px 25px rgba(34, 197, 94, 0.6);
 }
 
 /* SECONDARY */
@@ -1592,7 +1607,7 @@ nav li a:active {
 .contact-item a,
 .contact-item p {
   color: white;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   text-decoration: none;
   word-break: break-all;
@@ -1609,7 +1624,7 @@ nav li a:active {
 .map-box {
   width: 100%;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
 .map-box iframe {
